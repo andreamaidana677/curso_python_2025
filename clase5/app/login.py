@@ -1,6 +1,5 @@
-'''tst de cambiko'''
 from flask import Blueprint, request, jsonify 
-login = Blueprint('login', _name__) 
+login = Blueprint('login', __name__)
 
 @login.route('/login', methods=['POST']) 
 def llamarServicioSet(): 
@@ -22,7 +21,7 @@ def inicializarVariables(user, password):
     userLocal = "unida"
     passLocal = "unida123"
     codRes = 'SIN_ERROR'
-    mentes = 'ok'
+    menRes = 'ok'
 
     try:
         prin("verificar login")
@@ -39,7 +38,7 @@ def inicializarVariables(user, password):
     except Excepcion as e:
         print("Error", str(e))
         codRes = 'Error'
-        menRes = 'Msg' +str(e)
-        accion = "error interno"
+        menRes = 'Msg:' +str(e)
+        accion = "Error interno"
 
     return codRes, menRes, accion

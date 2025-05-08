@@ -1,27 +1,18 @@
 #!usr/bin/env python3 
 from flask import Flask 
-from clase5.app.main import login 
+from login import login
 
-app Flask (_name_)
+app = Flask(__name__)
 
 ##servicios rest 
 app.register_blueprint(login) 
 
 @app.route('/', methods=['GET']) 
 def hello(): 
+    return 'Hola Mundo' 
 
-return 'Hola Mundo' 
 
-if=(_name_)
+if __name__ == "__main__":
     
-##servicios rest
-app.register_bluepint(login)
-
-@app.route('/', methods['Get'])
-def hello ():
-    return'hola mundo'
-
-if _name_ == "_main_":
-
-app.run(host '0.0.0.0', debug True, port = 5001) 
-app.run(debug = True)
+    app.run(host = '0.0.0.0', debug = True, port = 5001)
+    app.run(debug = True)
