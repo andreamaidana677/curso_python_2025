@@ -1,4 +1,5 @@
-from flask import Blueprint, request, jsonify 
+from flask import Blueprint, request, jsonify
+
 login = Blueprint('login', __name__)
 
 @login.route('/login', methods=['POST']) 
@@ -8,37 +9,36 @@ def llamarServicioSet():
 
     codRes, menRes, accion = inicializarVariables(user, password) 
 
-salida = { 
-'codRes': 
-    'codRes': codRes, 
-    'menRes': menRes, 
-    'usuario': user, 
-    'accion': accion 
-} 
-return jsonify(salida)
+    salida = { 
+        'codRes': codRes,
+        'menRes': menRes,
+        'usuario': user,
+        'accion': accion 
+    } 
+    return jsonify(salida)
 
 def inicializarVariables(user, password):
-    userLocal = "unida"
-    passLocal = "unida123"
+    userlocal= "unida"
+    password= "unida123"
     codRes = 'SIN_ERROR'
     menRes = 'ok'
 
     try:
-        prin("verificar login")
-        if password == passLocal and user == userLocal:
-            print("Usuario y contraseña OK")
+        print= ("verificar login")
+       if password == passlocal and user == userlocal:
+            print("Usuario y contraseña ok")
             accion = "Success"
         else:
-            print("Usuario o contraseña incorrecta")
-            accion = "Usuario o contraseña incorrecta"
+            print("usuario o contraseña incorrecta")
+            accion = "usuario o contraseña incorrecta"
             codRes = 'ERROR'
-            menRes = 'credenciales o usuario incorrectas'
+            menRes = 'Credenciales o usuario incorrectas'
+       
 
-
-    except Excepcion as e:
-        print("Error", str(e))
-        codRes = 'Error'
-        menRes = 'Msg:' +str(e)
+    except Exception as e:
+        print("ERROR", str(e))
+        codRes = 'ERROR'
+        menRes = 'Msg: ' + str(e)
         accion = "Error interno"
-
+    
     return codRes, menRes, accion
