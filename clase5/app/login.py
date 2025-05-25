@@ -18,14 +18,14 @@ def llamarServicioSet():
     return jsonify(salida)
 
 def inicializarVariables(user, password):
-    userlocal= "unida"
-    password= "unida123"
+    userLocal= "unida"
+    passLocal= "unida123"
     codRes = 'SIN_ERROR'
-    menRes = 'ok'
+    menRes = 'OK'
 
     try:
-        print= ("verificar login")
-       if password == passlocal and user == userlocal:
+        print("verificar login")
+        if password == passLocal and user == userLocal:
             print("Usuario y contraseña ok")
             accion = "Success"
         else:
